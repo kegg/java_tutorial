@@ -2,6 +2,7 @@ package javaTutorial;
 
 import javax.swing.*;
 import java.awt.*;
+import java.util.*;
 
 public class Main extends JFrame {
     public static void main(String[] args) {
@@ -13,7 +14,10 @@ public class Main extends JFrame {
     }
 
     public Main() {
-        JComboBox box = new JComboBox();
+        Vector<Item> items = new Vector<>();
+        items.add(new Item(1, "John Smith"));
+        items.add(new Item(2, "Susan Jones"));
+        JComboBox box = new JComboBox(items);
         add(box, BorderLayout.NORTH);
     }
 }
