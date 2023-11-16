@@ -10,6 +10,10 @@ public class Item {
         this.value = value;
     }
 
+    public long getId() {
+        return this.id;
+    }
+
     public String toString() {
         return this.value;
     }
