@@ -5,13 +5,13 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class Main extends JFrame implements ActionListener {
+public class ComboBox extends JFrame implements ActionListener {
 
     private JComboBox<Item> box;
     private JTextArea textarea;
 
     public static void main(String[] args) {
-        Main main = new Main();
+        ComboBox main = new ComboBox();
         main.setTitle("Testing Combo Box");
         main.setSize(500,300);
         main.setLocationRelativeTo(null);
@@ -19,7 +19,7 @@ public class Main extends JFrame implements ActionListener {
         main.setVisible(true);
     }
 
-    public Main() {
+    public ComboBox() {
         DefaultComboBoxModel<Item> cbo = new DefaultComboBoxModel<>();
         cbo.addElement(new Item(1, "John Smith"));
         cbo.addElement(new Item(2, "Susan Jones"));
