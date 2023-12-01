@@ -7,8 +7,8 @@ import java.awt.event.ActionListener;
 
 public class ComboBox extends JFrame implements ActionListener {
 
-    private JComboBox<Item> box;
-    private JTextArea textarea;
+    private final JComboBox<Item> box;
+    private final JTextArea textarea;
 
     public ComboBox() {
         DefaultComboBoxModel<Item> cbo = new DefaultComboBoxModel<>();
@@ -33,7 +33,7 @@ public class ComboBox extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("press")) {
             long id = ((Item) box.getSelectedItem()).getId();
-            String name = ((Item) box.getSelectedItem()).toString();
+            String name = (box.getSelectedItem()).toString();
             textarea.setText("ID: " + id + "\n" + "Name: " + name);
         }
     }
