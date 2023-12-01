@@ -15,6 +15,8 @@ public class ComboBox extends JFrame implements ActionListener {
         DefaultComboBoxModel<Item> cbo = new DefaultComboBoxModel<>();
         cbo.addElement(new Item(1, "John Smith"));
         cbo.addElement(new Item(2, "Susan Jones"));
+        cbo.addElement(new Item(3, "Joan Smith"));
+        cbo.addElement(new Item(4, "Jeffrey Dahmar"));
         box = new JComboBox<>(cbo);
         JPanel buttonPanel = new JPanel();
         buttonPanel.setLayout(new FlowLayout(FlowLayout.TRAILING));
