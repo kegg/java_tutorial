@@ -10,15 +10,6 @@ public class ComboBox extends JFrame implements ActionListener {
     private JComboBox<Item> box;
     private JTextArea textarea;
 
-    public static void main(String[] args) {
-        ComboBox main = new ComboBox();
-        main.setTitle("Testing Combo Box");
-        main.setSize(500,300);
-        main.setLocationRelativeTo(null);
-        main.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        main.setVisible(true);
-    }
-
     public ComboBox() {
         DefaultComboBoxModel<Item> cbo = new DefaultComboBoxModel<>();
         cbo.addElement(new Item(1, "John Smith"));
@@ -31,6 +22,11 @@ public class ComboBox extends JFrame implements ActionListener {
         add(box, BorderLayout.NORTH);
         add(textarea, BorderLayout.CENTER);
         add(button, BorderLayout.SOUTH);
+        setTitle("Testing Combo Box");
+        setSize(500,300);
+        setLocationRelativeTo(null);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setVisible(true);
     }
 
     @Override
