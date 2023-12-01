@@ -43,8 +43,8 @@ public class App extends JFrame {
 
     private JPanel createMainPanel() {
         JPanel panel = new JPanel();
-
         panel.setLayout(new FlowLayout());
+
         JButton comboBoxBtn = new JButton("ComboBox");
         comboBoxBtn.addActionListener(e->new ComboBox());
         panel.add(comboBoxBtn);
