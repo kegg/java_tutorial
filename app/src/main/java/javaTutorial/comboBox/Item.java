@@ -1,9 +1,9 @@
-package javaTutorial;
+package javaTutorial.comboBox;
 
 public class Item {
     
-    private long id;
-    private String value;
+    private final long id;
+    private final String value;
 
     public Item(long id, String value) {
         this.id = id;

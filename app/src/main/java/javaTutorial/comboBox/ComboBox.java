@@ -1,4 +1,4 @@
-package javaTutorial;
+package javaTutorial.comboBox;
 
 import javax.swing.*;
 import java.awt.*;

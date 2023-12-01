@@ -3,6 +3,8 @@
  */
 package javaTutorial;
 
+import javaTutorial.comboBox.ComboBox;
+
 import javax.swing.*;
 import java.awt.*;
 
