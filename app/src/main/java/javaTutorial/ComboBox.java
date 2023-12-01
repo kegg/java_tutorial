@@ -4,6 +4,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.util.Objects;
 
 public class ComboBox extends JFrame implements ActionListener {
 
@@ -15,13 +16,16 @@ public class ComboBox extends JFrame implements ActionListener {
         cbo.addElement(new Item(1, "John Smith"));
         cbo.addElement(new Item(2, "Susan Jones"));
         box = new JComboBox<>(cbo);
+        JPanel buttonPanel = new JPanel();
+        buttonPanel.setLayout(new FlowLayout(FlowLayout.TRAILING));
         JButton button = new JButton("Get Data");
+        buttonPanel.add(button);
         button.setActionCommand("press");
         button.addActionListener(this);
         textarea = new JTextArea();
         add(box, BorderLayout.NORTH);
         add(textarea, BorderLayout.CENTER);
-        add(button, BorderLayout.SOUTH);
+        add(buttonPanel, BorderLayout.SOUTH);
         setTitle("Testing Combo Box");
         setSize(500,300);
         setLocationRelativeTo(null);
@@ -32,7 +36,7 @@ public class ComboBox extends JFrame implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         if (e.getActionCommand().equals("press")) {
-            long id = ((Item) box.getSelectedItem()).getId();
+            long id = ((Item) Objects.requireNonNull(box.getSelectedItem())).getId();
             String name = (box.getSelectedItem()).toString();
             textarea.setText("ID: " + id + "\n" + "Name: " + name);
         }
