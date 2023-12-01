@@ -25,7 +25,7 @@ public class ComboBox extends JFrame implements ActionListener {
         setTitle("Testing Combo Box");
         setSize(500,300);
         setLocationRelativeTo(null);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(JFrame.DISPOSE_ON_CLOSE);
         setVisible(true);
     }
 

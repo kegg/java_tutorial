@@ -3,8 +3,33 @@
  */
 package javaTutorial;
 
-public class App {
+import javax.swing.*;
+import java.awt.*;
+
+public class App extends JFrame {
     public static void main(String[] args) {
-        new ComboBox();
+        App app = new App();
+        app.setVisible(true);
+    }
+
+    public App() {
+        setTitle("Test Application");
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setSize(1000, 500);
+        setLocationRelativeTo(null);
+        JPanel mainPanel = createMainPanel();
+        add(mainPanel, BorderLayout.CENTER);
+        setVisible(true);
+    }
+
+    private JPanel createMainPanel() {
+        JPanel panel = new JPanel();
+
+        panel.setLayout(new FlowLayout());
+        JButton comboBoxBtn = new JButton("ComboBox");
+        comboBoxBtn.addActionListener(e->new ComboBox());
+        panel.add(comboBoxBtn);
+
+        return panel;
     }
 }
