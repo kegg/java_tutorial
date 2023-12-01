@@ -7,6 +7,7 @@ import javaTutorial.comboBox.ComboBox;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.KeyEvent;
 
 public class App extends JFrame {
     public static void main(String[] args) {
@@ -19,9 +20,25 @@ public class App extends JFrame {
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1000, 500);
         setLocationRelativeTo(null);
+        setJMenuBar(createMenuBar());
         JPanel mainPanel = createMainPanel();
         add(mainPanel, BorderLayout.CENTER);
         setVisible(true);
+    }
+
+    private JMenuBar createMenuBar() {
+        JMenuBar menuBar = new JMenuBar();
+
+        JMenu fileMenu = new JMenu("File");
+        fileMenu.setMnemonic(KeyEvent.VK_F);
+
+        JMenuItem fileItem = new JMenuItem("Exit");
+        fileItem.setMnemonic(KeyEvent.VK_X);
+        fileItem.addActionListener(e->System.exit(0));
+        fileMenu.add(fileItem);
+
+        menuBar.add(fileMenu);
+        return menuBar;
     }
 
     private JPanel createMainPanel() {
