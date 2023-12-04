@@ -4,6 +4,7 @@
 package javaTutorial;
 
 import javaTutorial.comboBox.ComboBox;
+import javaTutorial.fibonacci.FibonacciGenerator;
 import javaTutorial.names.NameGenerator;
 
 import javax.swing.*;
@@ -53,6 +54,10 @@ public class App extends JFrame {
         JButton nameGeneratorBtn = new JButton("Name Generator");
         nameGeneratorBtn.addActionListener(e->new NameGenerator());
         panel.add(nameGeneratorBtn);
+
+        JButton fibonacciBtn = new JButton("Fibonacci Sequence");
+        fibonacciBtn.addActionListener(e->new FibonacciGenerator());
+        panel.add(fibonacciBtn);
 
         return panel;
     }
