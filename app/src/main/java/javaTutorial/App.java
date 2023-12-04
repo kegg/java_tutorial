@@ -4,6 +4,7 @@
 package javaTutorial;
 
 import javaTutorial.comboBox.ComboBox;
+import javaTutorial.names.NameGenerator;
 
 import javax.swing.*;
 import java.awt.*;
@@ -48,6 +49,10 @@ public class App extends JFrame {
         JButton comboBoxBtn = new JButton("ComboBox");
         comboBoxBtn.addActionListener(e->new ComboBox());
         panel.add(comboBoxBtn);
+
+        JButton nameGeneratorBtn = new JButton("Name Generator");
+        nameGeneratorBtn.addActionListener(e->new NameGenerator());
+        panel.add(nameGeneratorBtn);
 
         return panel;
     }

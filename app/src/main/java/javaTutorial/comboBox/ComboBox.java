@@ -25,6 +25,9 @@ public class ComboBox extends JFrame implements ActionListener {
         buttonPanel.add(button);
         button.setActionCommand("press");
         button.addActionListener(this);
+        JButton closeButton = new JButton("Close");
+        closeButton.addActionListener(e->this.dispose());
+        buttonPanel.add(closeButton);
         textarea = new JTextArea();
         add(box, BorderLayout.NORTH);
         add(textarea, BorderLayout.CENTER);
