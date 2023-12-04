@@ -12,6 +12,7 @@ public class ComboBox extends JFrame implements ActionListener {
     private final JTextArea textarea;
 
     public ComboBox() {
+        super();
         DefaultComboBoxModel<Item> cbo = new DefaultComboBoxModel<>();
         cbo.addElement(new Item(1, "John Smith"));
         cbo.addElement(new Item(2, "Susan Jones"));
