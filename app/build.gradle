@@ -19,6 +19,7 @@ repositories {
 dependencies {
     // This dependency is used by the application.
     implementation 'com.formdev:flatlaf:3.2.5'
+    implementation 'com.miglayout:miglayout-swing:4.2'
     implementation 'com.google.guava:guava:32.1.1-jre'
 }
 
