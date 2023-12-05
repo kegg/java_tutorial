@@ -3,6 +3,7 @@
  */
 package javaTutorial;
 
+import com.formdev.flatlaf.FlatDarkLaf;
 import javaTutorial.comboBox.ComboBox;
 import javaTutorial.fibonacci.FibonacciGenerator;
 import javaTutorial.names.NameGenerator;
@@ -13,6 +14,11 @@ import java.awt.event.KeyEvent;
 
 public class App extends JFrame {
     public static void main(String[] args) {
+        try {
+            UIManager.setLookAndFeel(new FlatDarkLaf());
+        } catch (UnsupportedLookAndFeelException e) {
+            throw new RuntimeException(e);
+        }
         App app = new App();
         app.setVisible(true);
     }
