@@ -7,7 +7,6 @@ import com.formdev.flatlaf.FlatDarkLaf;
 import javaTutorial.comboBox.ComboBox;
 import javaTutorial.fibonacci.FibonacciGenerator;
 import javaTutorial.names.NameGenerator;
-import net.miginfocom.swing.MigLayout;
 
 import javax.swing.*;
 import java.awt.*;
@@ -52,7 +51,7 @@ public class App extends JFrame {
 
     private JPanel createMainPanel() {
         JPanel panel = new JPanel();
-        panel.setLayout(new MigLayout());
+        panel.setLayout(new FlowLayout());
 
         JButton comboBoxBtn = new JButton("ComboBox");
         comboBoxBtn.addActionListener(e->new ComboBox());
@@ -60,11 +59,11 @@ public class App extends JFrame {
 
         JButton nameGeneratorBtn = new JButton("Name Generator");
         nameGeneratorBtn.addActionListener(e->new NameGenerator());
-        panel.add(nameGeneratorBtn, "wrap");
+        panel.add(nameGeneratorBtn);
 
         JButton fibonacciBtn = new JButton("Fibonacci Sequence");
         fibonacciBtn.addActionListener(e->new FibonacciGenerator());
-        panel.add(fibonacciBtn, "span");
+        panel.add(fibonacciBtn);
 
         return panel;
     }
