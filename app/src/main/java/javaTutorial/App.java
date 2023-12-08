@@ -6,6 +6,7 @@ package javaTutorial;
 import com.formdev.flatlaf.FlatDarkLaf;
 import javaTutorial.comboBox.ComboBox;
 import javaTutorial.fibonacci.FibonacciGenerator;
+import javaTutorial.layouts.CardLayoutDemo;
 import javaTutorial.names.NameGenerator;
 
 import javax.swing.*;
@@ -79,6 +80,10 @@ public class App extends JFrame {
         });
         panel.add(toggleLabel);
         panel.add(toggleButton);
+
+        JButton cardLayoutButton = new JButton("Card Layout");
+        cardLayoutButton.addActionListener(e->new CardLayoutDemo());
+        panel.add(cardLayoutButton);
 
         return panel;
     }
