@@ -66,14 +66,18 @@ public class App extends JFrame {
         fibonacciBtn.addActionListener(e->new FibonacciGenerator());
         panel.add(fibonacciBtn);
 
+        JLabel toggleLabel = new JLabel("JToggle Button");
+        toggleLabel.setVisible(false);
+
         JToggleButton toggleButton = new JToggleButton("Hello World!");
         toggleButton.addItemListener(e->{
             if (e.getStateChange() == ItemEvent.DESELECTED) {
-                System.out.println("I've been deselected");
+                toggleLabel.setVisible(false);
             } else if (e.getStateChange() == ItemEvent.SELECTED) {
-                System.out.println("I'm selected!");
+                toggleLabel.setVisible(true);
             }
         });
+        panel.add(toggleLabel);
         panel.add(toggleButton);
 
         return panel;
