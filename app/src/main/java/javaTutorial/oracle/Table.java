@@ -1,4 +1,4 @@
-package javaTutorial.oracle.table;
+package javaTutorial.oracle;
 
 
 /*
