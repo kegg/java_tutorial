@@ -10,6 +10,7 @@ import javaTutorial.names.NameGenerator;
 
 import javax.swing.*;
 import java.awt.*;
+import java.awt.event.ItemEvent;
 import java.awt.event.KeyEvent;
 
 public class App extends JFrame {
@@ -64,6 +65,16 @@ public class App extends JFrame {
         JButton fibonacciBtn = new JButton("Fibonacci Sequence");
         fibonacciBtn.addActionListener(e->new FibonacciGenerator());
         panel.add(fibonacciBtn);
+
+        JToggleButton toggleButton = new JToggleButton("Hello World!");
+        toggleButton.addItemListener(e->{
+            if (e.getStateChange() == ItemEvent.DESELECTED) {
+                System.out.println("I've been deselected");
+            } else if (e.getStateChange() == ItemEvent.SELECTED) {
+                System.out.println("I'm selected!");
+            }
+        });
+        panel.add(toggleButton);
 
         return panel;
     }
