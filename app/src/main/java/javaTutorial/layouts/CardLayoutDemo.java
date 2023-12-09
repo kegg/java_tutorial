@@ -35,6 +35,9 @@ public class CardLayoutDemo  extends JFrame {
         cards.add(buildLabel("Sometimes you hide just to get away from it.",
                         "12/7/2023 - 21:20"),
                 "Label 25");
+        cards.add(buildLabel("Not everyone has the same background.",
+                        "12/8/2023 - 22:01"),
+                "Label 26");
 
         add(cards, BorderLayout.CENTER);
 
