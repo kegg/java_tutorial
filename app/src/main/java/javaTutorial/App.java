@@ -8,6 +8,7 @@ import javaTutorial.checkbox.MyCheckBox;
 import javaTutorial.comboBox.ComboBox;
 import javaTutorial.fibonacci.FibonacciGenerator;
 import javaTutorial.layouts.CardLayoutDemo;
+import javaTutorial.layouts.RadioCard;
 import javaTutorial.names.NameGenerator;
 import javaTutorial.radios.RadioButtons;
 
@@ -94,6 +95,10 @@ public class App extends JFrame {
         JButton checkBox = new JButton("Checkboxes in Group");
         checkBox.addActionListener(e->new MyCheckBox());
         panel.add(checkBox);
+
+        JButton radioCard = new JButton("Radio Buttons Controlling Cards");
+        radioCard.addActionListener(e->new RadioCard());
+        panel.add(radioCard);
 
         return panel;
     }
