@@ -47,8 +47,8 @@ public class CardLayoutDemo implements ItemListener {
     public void addComponentToPane(Container pane) {
         //Put the JComboBox in a JPanel to get a nicer look.
         JPanel comboBoxPane = new JPanel(); //use FlowLayout
-        String comboBoxItems[] = { BUTTONPANEL, TEXTPANEL };
-        JComboBox cb = new JComboBox(comboBoxItems);
+        String[] comboBoxItems = { BUTTONPANEL, TEXTPANEL };
+        JComboBox<String> cb = new JComboBox<>(comboBoxItems);
         cb.setEditable(false);
         cb.addItemListener(this);
         comboBoxPane.add(cb);
@@ -71,6 +71,13 @@ public class CardLayoutDemo implements ItemListener {
 
         pane.add(comboBoxPane, BorderLayout.PAGE_START);
         pane.add(cards, BorderLayout.CENTER);
+
+        JPanel buttonPanel = new JPanel();
+        JButton nextButton = new JButton("Next");
+        nextButton.addActionListener(e->cl.next(cards));
+        buttonPanel.add(nextButton);
+
+        pane.add(buttonPanel, BorderLayout.SOUTH);
     }
 
     public void itemStateChanged(ItemEvent evt) {
@@ -94,21 +101,17 @@ public class CardLayoutDemo implements ItemListener {
 
         //Display the window.
         frame.pack();
+        frame.setLocationRelativeTo(null);
         frame.setVisible(true);
     }
 
     public static void main(String[] args) {
         /* Use an appropriate Look and Feel */
         try {
-            //UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
-            UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
-        } catch (UnsupportedLookAndFeelException ex) {
-            ex.printStackTrace();
-        } catch (IllegalAccessException ex) {
-            ex.printStackTrace();
-        } catch (InstantiationException ex) {
-            ex.printStackTrace();
-        } catch (ClassNotFoundException ex) {
+            UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+            //UIManager.setLookAndFeel("javax.swing.plaf.metal.MetalLookAndFeel");
+        } catch (UnsupportedLookAndFeelException | ClassNotFoundException | InstantiationException |
+                 IllegalAccessException ex) {
             ex.printStackTrace();
         }
         /* Turn off metal's use of bold fonts */
@@ -116,10 +119,6 @@ public class CardLayoutDemo implements ItemListener {
 
         //Schedule a job for the event dispatch thread:
         //creating and showing this application's GUI.
-        javax.swing.SwingUtilities.invokeLater(new Runnable() {
-            public void run() {
-                createAndShowGUI();
-            }
-        });
+        javax.swing.SwingUtilities.invokeLater(CardLayoutDemo::createAndShowGUI);
     }
 }
