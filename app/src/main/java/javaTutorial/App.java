@@ -8,6 +8,7 @@ import javaTutorial.comboBox.ComboBox;
 import javaTutorial.fibonacci.FibonacciGenerator;
 import javaTutorial.layouts.CardLayoutDemo;
 import javaTutorial.names.NameGenerator;
+import javaTutorial.radios.RadioButtons;
 
 import javax.swing.*;
 import java.awt.*;
@@ -84,6 +85,10 @@ public class App extends JFrame {
         JButton cardLayoutButton = new JButton("Card Layout");
         cardLayoutButton.addActionListener(e->new CardLayoutDemo());
         panel.add(cardLayoutButton);
+
+        JButton radioButton = new JButton("Radio Buttons");
+        radioButton.addActionListener(e->new RadioButtons());
+        panel.add(radioButton);
 
         return panel;
     }
