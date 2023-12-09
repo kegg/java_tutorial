@@ -4,6 +4,7 @@
 package javaTutorial;
 
 import com.formdev.flatlaf.FlatDarkLaf;
+import javaTutorial.checkbox.MyCheckBox;
 import javaTutorial.comboBox.ComboBox;
 import javaTutorial.fibonacci.FibonacciGenerator;
 import javaTutorial.layouts.CardLayoutDemo;
@@ -89,6 +90,10 @@ public class App extends JFrame {
         JButton radioButton = new JButton("Radio Buttons");
         radioButton.addActionListener(e->new RadioButtons());
         panel.add(radioButton);
+
+        JButton checkBox = new JButton("Checkboxes in Group");
+        checkBox.addActionListener(e->new MyCheckBox());
+        panel.add(checkBox);
 
         return panel;
     }
