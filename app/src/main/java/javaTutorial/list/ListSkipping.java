@@ -16,8 +16,10 @@ public class ListSkipping {
         numbers.add("Six");
         numbers.add("Seven");
         numbers.add("Eight");
+        numbers.add("Nine");
+        numbers.add("Ten");
 
-        List<String> list = numbers.stream().skip(0).limit(3).collect(Collectors.toList());
+        List<String> list = numbers.stream().skip(numbers.size()-3).limit(3).collect(Collectors.toList());
         list.forEach(System.out::println);
     }
 }
