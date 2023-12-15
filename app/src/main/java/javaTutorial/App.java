@@ -4,6 +4,7 @@
 package javaTutorial;
 
 import com.formdev.flatlaf.FlatDarkLaf;
+import javaTutorial.buttons.Toggle;
 import javaTutorial.checkbox.MyCheckBox;
 import javaTutorial.comboBox.ComboBox;
 import javaTutorial.fibonacci.FibonacciGenerator;
@@ -99,6 +100,10 @@ public class App extends JFrame {
         JButton radioCard = new JButton("Radio Buttons Controlling Cards");
         radioCard.addActionListener(e->new RadioCard());
         panel.add(radioCard);
+
+        JButton toggleGroup = new JButton("Toggle Group");
+        toggleGroup.addActionListener(e->new Toggle());
+        panel.add(toggleGroup);
 
         return panel;
     }
