@@ -16,6 +16,7 @@ public class NameGenerator extends JFrame {
         super();
         init();
         buildFrame();
+        pack();
         setVisible(true);
     }
 
