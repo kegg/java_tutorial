@@ -105,6 +105,10 @@ public class App extends JFrame {
         toggleGroup.addActionListener(e->new Toggle());
         panel.add(toggleGroup);
 
+        JButton soRandom = new JButton("So Random");
+        soRandom.addActionListener(e->new javaTutorial.soRandom.App());
+        panel.add(soRandom);
+
         return panel;
     }
 }
